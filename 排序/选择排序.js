@@ -18,3 +18,5 @@ const bubbleSort = (arr) => {
   return arr
 };
 console.log(bubbleSort(arr));
+
+/* 算法思路：每次循环取到最小的值，然后将该值比较如果是当前最小则将该值提取到最前面 */
