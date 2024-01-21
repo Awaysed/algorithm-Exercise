@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>gan</h2>
+    <div class="container">
+        <div class="card">
+            <h2 id="btn1">display:none点击</h2>
+        </div>
+        <div class="card">
+            <h2 id="btn2">display:none点击</h2>
+        </div>
+    </div>
+</body>
+<script>
+
+    const btn1 = document.querySelector('#btn1')
+    const btn2 = document.querySelector('#btn2')
+    console.log(btn1);
+    btn1.onclick = function () {
+        btn1.parentElement.classList.add('fade-out1')
+    }
+    btn2.onclick = function () {
+        btn2.parentElement.classList.add('fade-out2')
+    }
+</script>
+<style>
+    .container {
+        width: 900px;
+        min-height: 900px;
+        margin: 20px auto;
+        border: 1px solid #bfc;
+        display: flex;
+        justify-content: space-around;
+
+        .card {
+            width: 200px;
+            height: 200px;
+            background-color: tan;
+        }
+
+        #btn1 , #btn2 {
+      
+            transition: opacity 15s, display 5s allow-discrete;
+            /* transition-behavior: allow-discrete; */
+        }
+     
+    }
+
+    .fade-out1 {
+        display: none;
+    }
+
+    .fade-out2 {
+        opacity: 0;
+    }
+</style>
+
+</html>
