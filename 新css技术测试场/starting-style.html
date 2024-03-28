@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <ul class="items">
+      <li class="item">
+        <p>Item 1 Name</p>
+      </li>
+    </ul>
+
+    <button class="add">
+      <span>➕</span>
+    </button>
+  </div>
+</body>
+<script>
+ 
+  function addListItem() {
+    const inputField = document.getElementById('newItem');
+    const newItemText = 'New Item'
+
+    const newItem = document.createElement('li');
+    newItem.className = 'item';
+
+    const itemText = document.createElement('p');
+    itemText.textContent = newItemText;
+    newItem.appendChild(itemText);
+
+    const list = document.querySelector('.items');
+    list.appendChild(newItem);
+  }
+  const addButton = document.querySelector('.add');
+  addButton.addEventListener('click', addListItem);
+</script>
+<style>
+  .item {
+    opacity: 1;
+    height: 3rem;
+    display: grid;
+    transition:  height 0.5s, display 0.5s allow-discrete;
+  }
+
+
+  @starting-style {
+    .item {
+      opacity: 0;
+      height: 0;
+    }
+  }
+
+  /* etc */
+  @layer base {
+
+
+    button {
+      border: none;
+      background: none;
+    }
+
+    .items {
+      padding: 0;
+      display: grid;
+      /* gap: 0.5rem; */
+    }
+
+    .item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      background: aliceblue;
+      border: 1px solid lightblue;
+      padding: 0 1rem;
+      border-radius: 1rem;
+      width: 300px;
+    }
+    .container {
+      display: grid;
+      justify-content: center;
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    .add {
+      font-size: 2rem;
+      width: 3rem;
+      height: 3rem;
+      line-height: 0;
+      margin: 0 auto;
+    }
+  }
+</style>
+</html>

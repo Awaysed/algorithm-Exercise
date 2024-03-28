@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div>元素1</div>
+    <div class="highlight">元素2</div>
+    <div>元素3</div>
+    <div>元素4</div>
+    <div class="highlight">元素5</div>
+    <div class="highlight">元素6</div>
+    <div>元素7</div>
+  </div>
+  <div></div>
+</div>
+</body>
+<style>
+.container {
+  width: 400px;
+  margin: 20px auto;
+  border: 1px solid #bfc;
+  > div {
+    line-height: 30px;
+    text-align: center;
+  }
+  & div:nth-child(2 of .highlight) {
+    background-color: yellow;
+  }
+  & .highlight:nth-child(2) {
+    background-color: rgb(183, 183, 167);
+  }
+  .card:has(img){
+    height: 100%;
+  }
+}
+@scope (.container) to (div) {
+  background-color: yellow;
+}
+</style>
+</html>

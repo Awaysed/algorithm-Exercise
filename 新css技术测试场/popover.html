@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button popovertarget="my-popover">打开 Popover</button>
+
+  <div popover id="my-popover">大家好！欢迎你们！</div>
+</body>
+<style>
+  #my-popover {
+    width: 400px;
+    height: 100%;
+    border: 1px solid black;
+    /* position: absolute; */
+    top: 50px;
+    left: auto;
+    transition: translate 0.5s ease-out, display 1s ease-out allow-discrete,
+      overlay 1s ease-out allow-discrete;
+    translate: 250px 0;
+  }
+
+  @starting-style {
+    #my-popover {
+      translate: 300px;
+    }
+  }
+</style>
+
+</html>
