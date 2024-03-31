@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div id="visual">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+      <div class="dot3"></div>
+    </div>
+  </div>
+</body>
+
+<style>
+  #visual {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 10px solid #e0e0e0;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  #visual div {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: blue;
+    
+  }
+
+  .dot1 {
+    translate: calc(cos(30deg) * 150px) calc(sin(30deg) * 150px)
+  }
+  .dot2 {
+    background-color: #bfc !important;
+    translate: calc(cos(-30deg) * 150px) calc(sin(-30deg) * 150px)
+  }
+  .dot3 {
+    translate: calc(cos(78deg) * 150px) calc(sin(78deg) * 150px)
+  }
+</style>
+
+</html>

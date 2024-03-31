@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container test1">
+    <h4>原始 :valid 和 :invalid(最大值为6)</h4>
+    <input id="age" name="age" type="number" value="5" max="6" />
+  </div>
+  <div class="container test2">
+    <h4>新属性 :user-valid 和 :user-invalid(最大值为6)</h4>
+    <input id="age" name="age" type="number" value="5" max="6" />
+  </div>
+</body>
+<style>
+  .container {
+    width: 400px;
+    height: 300px;
+    border: 1px solid black;
+    margin: 20px auto;
+  }
+
+  .test1 {
+    input:invalid {
+      background-color: ivory;
+      border: none;
+      outline: 2px solid red;
+      border-radius: 5px;
+    }
+  }
+
+  .test2 {
+    input:user-invalid {
+      background-color: ivory;
+      border: none;
+      outline: 2px solid red;
+      border-radius: 5px;
+    }
+  }
+</style>
+
+</html>
