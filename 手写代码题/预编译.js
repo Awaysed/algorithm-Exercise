@@ -11,6 +11,7 @@ function fn(a,c) {
     console.log(b); // function(){}
     function c() { }
     console.log(c); // functionc(){}
+    
 }
 fn()
 
