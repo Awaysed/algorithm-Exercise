@@ -5,7 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .box{
+        width: 50%;
+        margin: 50px auto;
+        background-color: #bfc;
+        /* height: 50px; */
+        .inner{
+            width: 100%;
+            padding-top: 50%;
+            position: relative;
+        }
+        .item{
+            background-color: black;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+</style>
 <body>
-    
+    <div class="box">
+        <div class="inner">
+            <div class="item"></div>
+
+        </div>
+    </div>
 </body>
 </html>
