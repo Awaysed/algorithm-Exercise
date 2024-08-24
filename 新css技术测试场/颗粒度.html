@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>粒度相关性示例</title>
+    <style>
+      .scatterplot {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        border: 1px solid #000;
+      }
+
+      .point {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: #333;
+        border-radius: 50%;
+        /* 初始位置随机 */
+        left: calc(50% + (#{random(200)}px - 100px));
+        top: calc(50% + (#{random(200)}px - 100px));
+      }
+
+      @for $i from 1 through 50 {
+        .point:nth-child(#{$i}) {
+          $x: random(200) - 100;
+          $y: random(200) - 100;
+          $delay: random(10) * 0.01s;
+          animation: move #{$delay} infinite ease-in-out;
+          animation-delay: $delay;
+          /* 使用CSS动画移动点 */
+          @keyframes move {
+            to {
+              transform: translate(#{$x}px, #{$y}px);
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="scatterplot">
+      <!-- 生成随机点 -->
+      <div class="point"></div>
+      <div class="point"></div>
+      <div class="point"></div>
+      <div class="point"></div>
+    </div>
+  </body>
+</html>
