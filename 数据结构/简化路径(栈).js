@@ -1,5 +1,6 @@
 https://leetcode.cn/problems/simplify-path/description/
 //  力扣↑
+//
 var simplifyPath = function(path) {
     const stack = []
     let str = ''
