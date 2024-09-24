@@ -12,3 +12,4 @@ const instanceofs = (target,obj)=>{
 }
 
 console.log(instanceofs([123],Object));
+console.log(instanceofs([123],Array));
