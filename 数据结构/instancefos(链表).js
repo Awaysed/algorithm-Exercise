@@ -8,7 +8,6 @@ const instanceofs = (target,obj)=>{
         p = p.__proto__
     }
     return false
-
 }
 
 console.log(instanceofs([123],Object));
