@@ -18,6 +18,7 @@ var lengthOfLongestSubstring = function(s) {
         map.set(val,i) // 设置当前元素进字典
     }
     return maxLength
+    //
 };
 
 
