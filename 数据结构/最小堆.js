@@ -7,11 +7,12 @@ class minHeap {
     this.heap.push(value);
     this.up(this.heap.length - 1);
   }
-  // 删除
+  // 删除(第一项 树顶)
   pop() {
     this.heap[0] = this.heap.pop();
     this.down(0);
   }
+  //返回最顶部
   peak(){
     return this.heap[0]
   }
