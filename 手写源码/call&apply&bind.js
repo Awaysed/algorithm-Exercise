@@ -52,3 +52,29 @@ Function.prototype.myApply = function (thisArg, argsArray) {
   // 6. 返回结果
   return result;
 };
+Function.prototype.myBind = function (thisArg, ...args) {
+  // 1. 确保 `this` 是函数
+  if (typeof this !== "function") {
+    throw new TypeError("myBind must be called on a function");
+  }
+
+  // 2. 保存当前函数引用
+  const originalFunction = this;
+
+  // 3. 创建绑定函数
+  function boundFunction(...newArgs) {
+    // 如果作为构造函数调用，`this` 是新实例
+    if (this instanceof boundFunction) {
+      // 使用原函数的原型作为新实例的原型
+      return new originalFunction(...args, ...newArgs);
+    }
+    // 普通调用，将 `this` 绑定到 `thisArg`
+    return originalFunction.apply(thisArg, [...args, ...newArgs]);
+  }
+  // 4. 维护原型链
+  if (originalFunction.prototype) {
+    boundFunction.prototype = Object.create(originalFunction.prototype);
+  }
+
+  return boundFunction;
+};
