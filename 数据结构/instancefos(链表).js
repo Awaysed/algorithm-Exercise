@@ -5,7 +5,7 @@ const instanceofs = (target,obj)=>{
         if(p == obj.prototype){
             return true
         }
-        p = p.__proto__
+        p = p.__proto__ // 沿着原型链向上寻找
     }
     return false
 }
