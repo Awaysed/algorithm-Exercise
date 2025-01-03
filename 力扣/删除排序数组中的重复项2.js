@@ -18,4 +18,5 @@ var removeDuplicates = function(nums) {
     fast++
     return slow
 };
-// 好难 虽然代码能写下来 但是完全理解不了 太抽象 无法想象
+// 好难 
+// 虽然代码能写下来 但是完全理解不了 太抽象 无法想象
