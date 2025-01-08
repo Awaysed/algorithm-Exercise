@@ -14,3 +14,5 @@ var canJump = function (nums) {
   return false;
 };
 console.log(canJump([3, 2, 1, 0, 4]));
+
+// 回头再看 又理解不了 呜呜
