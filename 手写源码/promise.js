@@ -18,6 +18,8 @@ class MyPromise {
     const resolve = (value) => {
       if (this.state === "pending") {
         setTimeout(() => {
+          // 这里模拟异步
+          // 在手写 Promise 时，我们无法直接操作微任务队列，所以为了模拟 Promise 异步特性，会用 setTimeout(fn, 0)：
           this.state = "fulfilled";
           this.value = value;
           this.onFulfilledCallBacks.forEach((foo) => {
@@ -44,11 +46,12 @@ class MyPromise {
   }
   then(onFulfilled, onRejected) {
     return new MyPromise((resolve, reject) => {
+      // 这里是递归
       const fulfilledHandler = () => {
         try {
           const result = onFulfilled ? onFulfilled(this.value) : this.value;
           result instanceof MyPromise
-            ? result.then(resolve, reject)
+            ? result.then(resolve, reject) // 这里其实是递归
             : resolve(result);
         } catch (error) {
           reject(error);
@@ -74,5 +77,20 @@ class MyPromise {
         this.onRejectedCallBacks.push(onRejected);
       }
     });
+  }
+  catch(onRejected) {
+    return this.then(null, onRejected);
+  }
+  finally(callback) {
+    return this.then(
+      () => {
+        callback();
+        return this.value;
+      },
+      () => {
+        callback();
+        return his.value;
+      }
+    );
   }
 }
