@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Layout</title>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr); /* 总6列便于分割 */
+        gap: 10px;
+      }
+
+      .item:nth-child(1),
+      .item:nth-child(2) {
+        grid-column: span 3; /* 上栏各占3列（共6列，形成两栏） */
+      }
+
+      .item:nth-child(n + 3) {
+        grid-column: span 2; /* 下栏各占2列（共3*2=6列，形成三栏） */
+        /* span 2 表示当前网格位置起始，向右跨 2 列。 */
+      }
+      .item {
+        border: 1px solid black;
+      }
+      .container2 {
+        display: grid;
+        gap: 10px; /* 全局间距 */
+      }
+
+      .top-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 两栏 */
+        gap: 10px; /* 行内间距 */
+      }
+
+      .bottom-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 三栏 */
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">上栏1</div>
+      <div class="item">上栏2</div>
+      <div class="item">下栏1</div>
+      <div class="item">下栏2</div>
+      <div class="item">下栏3</div>
+    </div>
+    <div class="container2">
+      <div class="top-row">
+        <div>上栏1</div>
+        <div>上栏2</div>
+      </div>
+      <div class="bottom-row">
+        <div>下栏1</div>
+        <div>下栏2</div>
+        <div>下栏3</div>
+      </div>
+    </div>
+  </body>
+</html>
