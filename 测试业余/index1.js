@@ -49,4 +49,4 @@ function generateId( age = 0, sex = "random" ) {
 
   return partialId + checkCode;
 }
-console.log(generateId(24, "female"));
+console.log(generateId(98, "female"));

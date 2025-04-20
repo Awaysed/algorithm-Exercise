@@ -1,0 +1,8 @@
+<!-- 定位key -->
+<!-- 选择就诊人 -->
+<!-- 监护人信息 -->
+<!-- 点击事件 -->
+<view class="eys" data-id="{{item._id}}" bindtap="toggleIncomeVisibility">眼睛</view>
+<!-- new-info-guardianship 监护人 -->
+<!-- 图片 -->
+<image src="{{imageServerAddress+'search-input-close.png'}}" class="input-close" />
