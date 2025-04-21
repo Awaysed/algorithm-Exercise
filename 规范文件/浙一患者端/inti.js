@@ -14,3 +14,7 @@ const app = getApp();
 // 改动1.添加监护人代码 2.credentialList 监护人替换guardianCredentialList
 // 3.选择身份证号 生日处理逻辑
 // <!-- 监护人信息 -->
+
+
+//消息中心
+// 1.复制页面 换custom-tab-bar 换图标 换messag请求eRequest
