@@ -1,0 +1,14 @@
+<!-- 搜索key -->
+<!-- 监护人 -->
+<!-- 收入总览 -->
+<!-- 监护人需求 -->
+<!-- 点击事件 -->
+<view class="eys" data-id="{{item._id}}" bindtap="toggleIncomeVisibility">眼睛</view>
+<!-- new-info-guardianship 监护人 -->
+<!-- 图片 -->
+<image src="{{imageServerAddress+'search-input-close.png'}}" class="input-close"/>
+
+<!-- 需求记录
+1.医生收入时间上线以内
+
+-->
